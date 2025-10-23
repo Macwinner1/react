@@ -1,0 +1,12 @@
+.register form div{
+    display: flex;
+    align-items: center;
+    /* flex-direction: column; */
+    gap: 10px;
+}
+.register form div label{
+    padding-right: 30px;
+}
+.register p a{
+    text-decoration: none;
+}
