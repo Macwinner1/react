@@ -21,10 +21,12 @@ export const Login = () => {
     setUser((prevUser) => ({...prevUser, [name]: value.trim()}));
   }
 
+  console.log("User:", user);
+
   async function handleSubmit(e){
     e.preventDefault();
     try {
-      let response = await loginData(user, token).unwrap();
+      let response = await loginData(user).unwrap();
       if (response) {
         setTimeout(() => navigate("/home"), 2000);
       }
@@ -51,7 +53,7 @@ export const Login = () => {
         </div>
         <button type="submit">Login</button>
       </form>
-      <p>Don't have an account? <Link to="/register">Register</Link></p>
+      <p>Don't have an account? <Link to="/auth/register">Register</Link></p>
       
     </div>
   )
